@@ -1,9 +1,12 @@
 import React from 'react';
 import {render} from 'react-dom';
 
-import HelloWorld from './helloworld/helloworld';
+import data from './data';
+import TodoList from './todoList/todoList';
 
-render(<HelloWorld />, document.getElementById('app-root'));
+console.log(data);
+
+render(<TodoList list={data} />, document.getElementById('app-root'));
 
 
 
