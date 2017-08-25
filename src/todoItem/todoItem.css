@@ -1,0 +1,23 @@
+.todo-item {
+    background: lightsteelblue;
+}
+
+.link {
+    padding: 5px;
+}
+
+.link:hover {
+    cursor: pointer;
+}
+
+.what-todo-wrapper {
+    padding: 5px 0;
+}
+
+.what-todo-text {
+    font-weight: bold;
+}
+
+.children {
+    padding-left: 20px;
+}

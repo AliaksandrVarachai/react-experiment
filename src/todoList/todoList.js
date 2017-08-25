@@ -3,10 +3,13 @@ import React, {Component} from 'react';
 import TodoItem from '../todoItem/todoItem';
 
 class TodoList extends Component {
+  /**
+   * Creates a tree with todo list
+   * @param props = [{whatTodo:<string>, isDone: <boolean>, {children: Array}}]
+   */
   constructor(props) {
     super(props);
   }
-  // props - object;
   render() {
     const list = this.props.list;
     return (
@@ -14,22 +17,14 @@ class TodoList extends Component {
         {list.map((item, idx) => {
           return item.children && item.children instanceof Array && item.children.length
             ?
-            <TodoItem whatTodo={item.whatTodo}>
+            <TodoItem whatTodo={item.whatTodo} isDone={item.isDone}>
               <TodoList list={item.children} />
             </TodoItem>
             :
-            <TodoItem whatTodo={item.whatTodo} />
+            <TodoItem whatTodo={item.whatTodo} isDone={item.isDone} />
         })}
       </div>
     )
-    // {list.map((item) => {
-    //   if (item.children && item.children instanceof Array.prototype && item.children.length) {
-    //     return <div>hey</div>
-    //     {/* <TodoList list={item.children} /> */}
-    //   }
-    //   return <div>hoy</div>
-    //   {/*<TodoItem whatTodo={item.whatTodo} />*/}
-    // }}
   }
 }
 

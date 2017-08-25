@@ -10,7 +10,8 @@ export default [
           {
             whatTodo: 'todo 1.2.1'
           }, {
-            whatTodo: 'todo 1.2.2'
+            whatTodo: 'todo 1.2.2',
+            isDone: 'true'
           }
         ]
       }
