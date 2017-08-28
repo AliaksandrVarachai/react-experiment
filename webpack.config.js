@@ -5,10 +5,14 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
   entry: {
-    app: './src/app'
+    app: './src/app',
+    //for the sake of experiment (see reacme.md)
+    'proba1': './src/proba1',
+    'proba-router': './src/proba-router',
+    'proba-history': './src/proba-history',
   },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist/'
   },

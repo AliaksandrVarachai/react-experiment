@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    window.onload = function(event) {
+      console.log('onload')
+    };
+//    window.addEventListener('beforeunload', onbeforeunload);
+
+    function onbeforeunload(event) {
+      var newWindow = window.open('');
+      newWindow.document.write('hey, it is the only way to say that document was RELOADED')
+      return null;
+    };
+  </script>
+</head>
+<body>
+<div id="app-root">
+  <button id="show-history">Show history</button>&nbsp;&nbsp;&nbsp;&nbsp;
+  <button id="prev">&lt; previous</button>&nbsp;<button id="next">next &gt;</button>
+</div>
+<div id="page"></div>
+
+<script src="./dist/proba-history.bundle.js"></script>
+</body>
+</html>

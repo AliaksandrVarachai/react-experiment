@@ -10,6 +10,13 @@ class TodoList extends Component {
   constructor(props) {
     super(props);
   }
+
+  checkHandler(event) {
+    let target = event.target;
+
+    this.setState(target.value)
+  }
+
   render() {
     const list = this.props.list;
     return (
