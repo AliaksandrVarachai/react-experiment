@@ -10,6 +10,7 @@ module.exports = {
     'proba1': './src/proba1',
     'proba-router': './src/proba-router',
     'proba-history': './src/proba-history',
+    'proba-redux': './src/proba-redux',
   },
   output: {
     filename: '[name].bundle.js',
