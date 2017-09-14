@@ -2,11 +2,13 @@ const webpack = require('webpack');
 const path = require('path');
 
 const isProduction = process.env.NODE_ENV === 'production';
+console.log('***** process.env.NODE_ENV=', process.env.NODE_ENV);
+console.log('***** typeof process.env.NODE_ENV=', typeof process.env.NODE_ENV);
 
 module.exports = {
   entry: {
     app: './src/app',
-    //for the sake of experiment (see reacme.md)
+    //for the sake of experiment (see readme.md)
     'proba1': './src/proba1',
     'proba-router': './src/proba-router',
     'proba-history': './src/proba-history',
@@ -17,11 +19,11 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/dist/'
   },
-  devtool: 'eval',
+  devtool: isProduction ? false : 'eval-source-map', //'eval' does not work
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        ENV: true
+        isProduction //we takes env from NODE end pass it WEB
       }
     })
   ],
